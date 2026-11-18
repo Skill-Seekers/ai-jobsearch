@@ -51,6 +51,7 @@ Requirements in one line: Python 3.8+ for the tools; a Claude plan with Cowork o
 | [ASSUMPTIONS](docs/ASSUMPTIONS.md) | What it takes for granted (read before trusting a score) |
 | [SCOPE](docs/SCOPE.md) | What is in scope and what is not |
 | [ADAPTING](docs/ADAPTING.md) | Replacing the TPM example with your role |
+| [IMPORT-TO-OTHER-AI](docs/IMPORT-TO-OTHER-AI.md) | Giving the repo to ChatGPT or Gemini to build a similar tool |
 | [CONFIG](docs/CONFIG.md) | Every key in `jobsearch.config.json` |
 | [CLI](docs/CLI.md) | Every command, with exit codes |
 | [DATA_SCHEMAS](docs/DATA_SCHEMAS.md) | The file formats the tools read and write |
