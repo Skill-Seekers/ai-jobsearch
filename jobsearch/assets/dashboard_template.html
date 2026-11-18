@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root{--bg:#f6f8fa;--surface:#fff;--text:#1f2328;--muted:#59636e;--line:#d1d9e0;--accent:#0969da;--g-bg:#d8efdd;--b-bg:#d0e8ff;--a-bg:#fff3cc;--warn:#9a6700}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--surface:#161b22;--text:#e6edf3;--muted:#8d96a0;--line:#30363d;--accent:#58a6ff;--g-bg:#12331c;--b-bg:#10294a;--a-bg:#3a2e0d;--warn:#d29922}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:20px 16px 40px}
+.hero{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}.hero h1{font-size:20px;margin:0 12px 0 0}
+.badge{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}.stat b{display:block;font-size:22px}.stat span{color:var(--muted);font-size:12px}
+.tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit}
+.tab[aria-selected=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.bar input[type=search],.bar select{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:6px 8px;border-radius:6px;font:inherit}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:880px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{position:sticky;top:0;background:var(--surface);cursor:pointer;white-space:nowrap;font-size:12px;color:var(--muted)}
+tr.b-Strongest td.m{background:var(--g-bg)}tr.b-Strong td.m{background:var(--b-bg)}tr.b-Stretch td.m{background:var(--a-bg)}
+td.m{font-weight:700;text-align:center}
+.src{font-size:11px;border-radius:4px;padding:1px 6px;color:#fff;background:#57606a}
+.src-LinkedIn{background:#0a66c2}.src-Indeed{background:#2e7d32}.src-Glassdoor{background:#b45f00}.src-Dice{background:#b3261e}
+.nw{white-space:nowrap}.dim{color:var(--muted)}.warn{color:var(--warn)}.new{font-size:11px;border:1px solid var(--accent);color:var(--accent);border-radius:4px;padding:0 5px;margin-left:4px}
+a{color:var(--accent)}.foot{margin-top:14px;color:var(--muted);font-size:12px}.empty{padding:24px;text-align:center;color:var(--muted)}
+.pill{font-size:11px;border-radius:999px;padding:1px 8px;border:1px solid var(--line)}.pill-applied,.pill-screen,.pill-interview,.pill-offer{background:var(--g-bg)}.pill-drafted{background:var(--a-bg)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero"><h1>__HEADING__</h1><span class="badge" id="b-run"></span><span class="badge" id="b-date"></span><span class="badge" id="b-filter"></span><span class="badge" id="b-src"></span></div>
+  <div class="stats" id="stats"></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="t-res" aria-selected="true">Results</button>
+    <button class="tab" role="tab" id="t-fil" aria-selected="false">Filtered out</button>
+    <button class="tab" role="tab" id="t-app" aria-selected="false">Applications</button>
+  </div>
+  <div id="p-res">
+    <div class="bar">
+      <input type="search" id="q" placeholder="Search company or title" aria-label="Search">
+      <select id="fb" aria-label="Bucket"><option value="">All buckets</option><option>Strongest Fit</option><option>Strong Fit</option><option>Stretch / Watch</option></select>
+      <label><input type="checkbox" id="fa"> Hide ones in my tracker</label>
+      <label><input type="checkbox" id="fn"> Recently posted only</label>
+    </div>
+    <div class="tbl"><table id="tr"><thead></thead><tbody></tbody></table></div>
+  </div>
+  <div id="p-fil" hidden>
+    <div class="bar"><select id="fr" aria-label="Reason type"><option value="">All reasons</option></select></div>
+    <div class="tbl"><table id="tf"><thead></thead><tbody></tbody></table></div>
+  </div>
+  <div id="p-app" hidden><div class="tbl"><table id="ta"><thead></thead><tbody></tbody></table></div>
+    <div class="foot">Read-only view of your tracker. A status changes only when you confirm it to the assistant. Empty means not recorded, not "did not happen".</div></div>
+  <div class="foot" id="foot"></div>
+</div>
+<script>
+/* RUN NOTES (also in the footer): see the __NOTES_ID__ block below. */
+const DATA = __DATA__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "#";
+const RES = DATA.results, FIL = DATA.filtered, APP = DATA.applications;
+$("#b-run").textContent = "Run #" + DATA.run; $("#b-date").textContent = "Run date " + DATA.date;
+$("#b-filter").textContent = DATA.filter_label; $("#b-src").textContent = DATA.sources_label;
+$("#foot").innerHTML = esc(DATA.footer) + (DATA.notes ? "<br>" + esc(DATA.notes).replace(/\n/g, "<br>") : "");
+const COLS = [["num","#"],["match","Match"],["bucket","Bucket"],["source","Source"],["company","Company"],["title","Title"],["location","Location"],["posted","Posted"],["salary","Salary"],["applied_status","In tracker"],["link","Link"]];
+let sortKey = "num", sortDir = 1;
+function stats() {
+  const n = b => RES.filter(r => r.bucket === b).length;
+  const cards = [[RES.length,"Results"],[n("Strongest Fit"),"Strongest Fit"],[n("Strong Fit"),"Strong Fit"],[n("Stretch / Watch"),"Stretch / Watch"],[RES.filter(r=>r.is_new).length,"Posted in last "+DATA.new_days+" days"],[FIL.length,"Filtered out"],[RES.filter(r=>r.applied_id).length,"Already in tracker"]];
+  $("#stats").innerHTML = cards.map(c => `<div class="stat"><b>${c[0]}</b><span>${esc(c[1])}</span></div>`).join("");
+}
+function renderRes() {
+  $("#tr thead").innerHTML = "<tr>" + COLS.map(c => `<th data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir>0?" ▲":" ▼"):""}</th>`).join("") + "</tr>";
+  const q = $("#q").value.toLowerCase(), fb = $("#fb").value, fa = $("#fa").checked, fn = $("#fn").checked;
+  let rows = RES.filter(r => (!q || (r.company + " " + r.title).toLowerCase().includes(q)) && (!fb || r.bucket === fb) && (!fa || !r.applied_id) && (!fn || r.is_new));
+  rows.sort((a, b) => { const x = a[sortKey], y = b[sortKey]; return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+  $("#tr tbody").innerHTML = rows.length ? rows.map(r => {
+    const cls = r.bucket.startsWith("Strongest") ? "Strongest" : r.bucket.startsWith("Strong") ? "Strong" : "Stretch";
+    const meta = [r.workMode === "N/A" ? "" : r.workMode, r.employment, r.applicants ? r.applicants + " applicants" : ""].filter(Boolean).join(" · ");
+    return `<tr class="b-${cls}"><td>${r.num}</td><td class="m" title="${esc(r.why)}">${r.match}%</td><td>${esc(r.bucket)}</td>` +
+      `<td><span class="src src-${esc(r.source)}">${esc(r.source)}</span></td><td>${esc(r.company)}</td>` +
+      `<td>${esc(r.title)}${r.is_new?'<span class="new" title="Posted in the last '+DATA.new_days+' days">NEW</span>':""}<div class="dim">${esc(meta)}</div>${r.note?`<div class="warn">${esc(r.note)}</div>`:""}</td>` +
+      `<td>${esc(r.location)}</td><td class="nw">${esc(r.posted)}</td><td>${esc(r.salary)}</td>` +
+      `<td>${r.applied_id?`<span class="pill pill-${esc(r.applied_status)}">${esc(r.applied_status)}</span>`:""}</td><td><a href="${esc(safeUrl(r.link))}" target="_blank" rel="noopener">Open ↗</a></td></tr>`;
+  }).join("") : `<tr><td colspan="11" class="empty">No roles match these filters.</td></tr>`;
+}
+function renderFil() {
+  const t = $("#fr").value;
+  $("#tf thead").innerHTML = "<tr><th>Company</th><th>Title</th><th>Location</th><th>Posted</th><th>Reason</th><th>Link</th></tr>";
+  const rows = FIL.filter(f => !t || f.reasonType === t);
+  $("#tf tbody").innerHTML = rows.length ? rows.map(f => `<tr><td>${esc(f.company)}</td><td>${esc(f.title)}</td><td>${esc(f.location)}</td><td>${esc(f.posted)}</td><td>${esc(f.reason)}</td><td><a href="${esc(safeUrl(f.link))}" target="_blank" rel="noopener">View ↗</a></td></tr>`).join("") : `<tr><td colspan="6" class="empty">Nothing was filtered out.</td></tr>`;
+}
+function renderApp() {
+  $("#ta thead").innerHTML = "<tr><th>Company</th><th>Title</th><th>Req</th><th>Status</th><th>Applied</th><th>Days</th><th>Outcome</th><th>Notes</th></tr>";
+  $("#ta tbody").innerHTML = APP.length ? APP.map(a => `<tr><td>${esc(a.company)}</td><td>${esc(a.title)}</td><td>${esc(a.req_id)}</td><td><span class="pill pill-${esc(a.status)}">${esc(a.status)}</span></td><td>${esc(a.applied_date || (a.applied ? "date not recorded" : ""))}</td><td>${a.days == null ? "" : a.days}</td><td>${esc(a.outcome)}</td><td class="dim">${esc(a.notes)}</td></tr>`).join("") : `<tr><td colspan="8" class="empty">No applications recorded yet.</td></tr>`;
+}
+const types = [...new Set(FIL.map(f => f.reasonType))];
+types.forEach(t => { const o = document.createElement("option"); o.value = t; o.textContent = ({excl:"Excluded company",staff:"Staffing / consulting",wrong:"Does not fit"})[t] || t; $("#fr").appendChild(o); });
+$("#tr thead").addEventListener("click", e => { const k = e.target.closest("th")?.dataset.k; if (!k) return; sortDir = (sortKey === k) ? -sortDir : 1; sortKey = k; renderRes(); });
+["#q","#fb","#fa","#fn"].forEach(s => $(s).addEventListener("input", renderRes));
+$("#fr").addEventListener("input", renderFil);
+const TABS = [["#t-res","#p-res"],["#t-fil","#p-fil"],["#t-app","#p-app"]];
+TABS.forEach(([t, p]) => $(t).addEventListener("click", () => { TABS.forEach(([t2, p2]) => { $(t2).setAttribute("aria-selected", t2 === t); $(p2).hidden = (p2 !== p); }); }));
+stats(); renderRes(); renderFil(); renderApp();
+</script>
+</body>
+</html>

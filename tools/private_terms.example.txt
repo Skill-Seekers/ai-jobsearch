@@ -1,0 +1,36 @@
+# Example seed file for: privacy_scan.py build-denylist --seed private_terms.txt
+# Copy this file to a folder OUTSIDE the repo, rename it, and fill it with YOUR real terms.
+# Format: CATEGORY|term        (!term = exception, a term that is allowed to appear)
+# METRIC and AMBIG entries are WARN; all other categories are FAIL.
+
+# Who you are (include nicknames, file-name prefixes, handles)
+NAME|Jordan Quill
+NAME|JQuill
+NAME|jquill
+EMAIL|jordan.quill@example.com
+PHONE|(310) 555-0100
+HANDLE|github.com/jquill
+
+# Places your name or files can hide
+PATH|jquill
+PATH|MyWorkFolder
+
+# Employers and customers named on your resume
+EMPLOYER|Zyxwell Corp
+EMPLOYER|Fabrikam Dynamics
+OTHER|Fabrikam Reference Design
+
+# People you met (interviewers, recruiters, referrers)
+PERSON|Marlo Tessing
+COMPANY|Northwind Staffing Group
+
+# Identifiers
+ID|abc123ExampleDatasetId
+# A regex entry
+ID|re:JR\d{7}
+
+# Numbers from your resume that are specific enough to identify you (reported as WARN)
+METRIC|$250K
+
+# A word you DO allow in the repo even though it matches a term above
+!Fabrikam Reference Design

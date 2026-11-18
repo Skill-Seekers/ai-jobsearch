@@ -1,0 +1,8 @@
+[
+ {
+  "company": "Contoso",
+  "title_contains": "Bring-up",
+  "delta": 2,
+  "reason": "Example: description names a program owned end to end, which the keyword scorer cannot see."
+ }
+]

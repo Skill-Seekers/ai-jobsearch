@@ -1,0 +1,61 @@
+{
+ "schema_version": "1.2",
+ "applications": [
+  {
+   "id": "litware-storage-tpm",
+   "company": "Litware Storage",
+   "title": "Senior Technical Program Manager, Controller Firmware",
+   "req_id": null,
+   "source_job_id": "0000000204",
+   "jd_file": "resume/job_descriptions/litware-storage_tpm-firmware.txt",
+   "folder": "Litware-Storage-TPM",
+   "title_keywords": [
+    "controller",
+    "firmware"
+   ],
+   "status": "drafted",
+   "applied": false,
+   "applied_date": null,
+   "tailored_date": "2026-10-07",
+   "outcome": null,
+   "notes": "Sample entry: package built, submission not confirmed."
+  },
+  {
+   "id": "tailspin-cloud-tpm",
+   "company": "Tailspin Cloud",
+   "title": "Senior Technical Program Manager, Cloud Infrastructure",
+   "req_id": null,
+   "source_job_id": null,
+   "jd_file": null,
+   "folder": null,
+   "title_keywords": [
+    "cloud",
+    "infrastructure"
+   ],
+   "status": "applied",
+   "applied": true,
+   "applied_date": "2026-10-24",
+   "tailored_date": "2026-10-23",
+   "outcome": null,
+   "notes": "Sample entry: the candidate confirmed this submission."
+  },
+  {
+   "id": "adventure-works-pm",
+   "company": "Adventure Works Devices",
+   "title": "Program Manager, Launch",
+   "req_id": null,
+   "source_job_id": null,
+   "jd_file": null,
+   "folder": null,
+   "title_keywords": [
+    "launch"
+   ],
+   "status": "passed",
+   "applied": false,
+   "applied_date": null,
+   "tailored_date": "2026-09-15",
+   "outcome": "closed",
+   "notes": "Posting closed."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+COMPANY: Litware Storage
+TITLE: Senior Technical Program Manager, Controller Firmware
+SOURCE: Sample
+POSTED: 2026-10-25
+=====================================================================
+Litware Storage is hiring a Senior Technical Program Manager to lead silicon bring-up and customer qualification for a new ASIC family.
+
+What you will do
+- Own the program plan from tape-out through post-silicon validation, bring-up, qualification and volume production.
+- Drive cross-functional execution across hardware, firmware, test and manufacturing; manage risk, dependencies and escalations.
+- Run customer qualification with OEM and ODM partners and report status to executive stakeholders.
+
+Requirements
+- 8+ years of technical program management in semiconductor or hardware.
+- Experience with NPI, ASIC or SoC programs, firmware and hardware bring-up.
+- Strong stakeholder management; Jira and Confluence; SQL or Python for dashboards.
+- PMP or equivalent is a plus. Six Sigma or Lean experience is a plus.

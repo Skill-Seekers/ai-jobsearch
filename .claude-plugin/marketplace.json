@@ -1,0 +1,11 @@
+{
+  "name": "ai-jobsearch",
+  "owner": { "name": "evan7split" },
+  "plugins": [
+    {
+      "name": "ai-jobsearch",
+      "source": "./",
+      "description": "Guarded AI job-search workflow: search, score, tailor, track, interview prep. Config-driven; TPM example included."
+    }
+  ]
+}

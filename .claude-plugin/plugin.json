@@ -1,0 +1,7 @@
+{
+  "name": "ai-jobsearch",
+  "version": "0.2.0",
+  "description": "A guarded AI job-search workflow: multi-source search with transparent scoring and an HTML dashboard, JD-tailored resumes and cover letters with approval gates, duplicate-application checks, an application tracker, ATS formatting checks, skill-gap reports, interview prep and LinkedIn audit. One JSON config per candidate; ships with a fictional Technical Program Manager example that you replace for your own role.",
+  "keywords": ["job-search", "resume", "ats", "interview-prep", "application-tracking", "career"],
+  "license": "MIT"
+}

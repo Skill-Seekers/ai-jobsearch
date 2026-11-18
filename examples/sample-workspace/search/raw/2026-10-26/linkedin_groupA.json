@@ -1,0 +1,80 @@
+[
+ {
+  "_source": "LinkedIn",
+  "companyName": "Contoso Semiconductor",
+  "title": "Senior Technical Program Manager, Silicon Bring-up",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-25",
+  "link": "https://www.linkedin.com/jobs/view/senior-tpm-silicon-0000000101",
+  "descriptionText": "Lead silicon bring-up, post-silicon validation and customer qualification for a new ASIC. Own NPI from tape-out to volume production across hardware, firmware and test. Manage risk, dependencies and executive stakeholders. Requirements: 8+ years of technical program management in semiconductor or hardware; OEM and ODM customer programs.",
+  "salary": "$185,000 - $240,000",
+  "applicantsCount": 22,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "LinkedIn",
+  "companyName": "Fabrikam Silicon",
+  "title": "Staff Technical Program Manager, Customer Programs",
+  "location": "Remote (United States)",
+  "postedAt": "2026-10-24",
+  "link": "https://www.linkedin.com/jobs/view/staff-tpm-customer-0000000102",
+  "descriptionText": "Lead customer-facing program delivery for OEM and hyperscale customers: qualification, design-in, escalations and launch readiness for a new SoC platform. Requirements: 7+ years of technical program management; hardware and firmware NPI experience.",
+  "salary": "",
+  "applicantsCount": 41,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "LinkedIn",
+  "companyName": "Wingtip Devices",
+  "title": "Senior Technical Program Manager, Hardware",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-23",
+  "link": "https://www.linkedin.com/jobs/view/senior-tpm-hardware-0000000103",
+  "descriptionText": "Lead cross-functional technical programs for hardware products: schedules, risks, stakeholders, launch readiness. Requirements: 6+ years of technical program management.",
+  "salary": "$175,000 - $205,000",
+  "applicantsCount": 17,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "LinkedIn",
+  "companyName": "Proseware Labs",
+  "title": "Senior Technical Program Manager, ML Model Training",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-24",
+  "link": "https://www.linkedin.com/jobs/view/senior-tpm-ml-0000000104",
+  "descriptionText": "Run ML platform and model training programs: model release, inference serving stack, machine learning pipeline delivery and LLM evaluation. Requirements: 6+ years of program management; generative ai platform experience.",
+  "salary": "$190,000 - $250,000",
+  "applicantsCount": 63,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "LinkedIn",
+  "companyName": "Contoso Semiconductor",
+  "title": "Scrum Master",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-25",
+  "link": "https://www.linkedin.com/jobs/view/scrum-master-0000000105",
+  "descriptionText": "Lead cross-functional technical programs for hardware products: schedules, risks, stakeholders, launch readiness. Requirements: 6+ years of technical program management.",
+  "salary": "",
+  "applicantsCount": 9,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "LinkedIn",
+  "companyName": "Fabrikam Silicon",
+  "title": "Senior Technical Program Manager",
+  "location": "Boston, MA",
+  "postedAt": "2026-10-25",
+  "link": "https://www.linkedin.com/jobs/view/senior-tpm-boston-0000000106",
+  "descriptionText": "Lead silicon bring-up, post-silicon validation and customer qualification for a new ASIC. Own NPI from tape-out to volume production across hardware, firmware and test. Manage risk, dependencies and executive stakeholders. Requirements: 8+ years of technical program management in semiconductor or hardware; OEM and ODM customer programs.",
+  "salary": "$180,000 - $230,000",
+  "applicantsCount": 12,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ }
+]

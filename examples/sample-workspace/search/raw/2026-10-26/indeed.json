@@ -1,0 +1,54 @@
+[
+ {
+  "_source": "Indeed",
+  "companyName": "Contoso Semiconductor",
+  "title": "Senior Technical Program Manager, Silicon Bring-up",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-25",
+  "link": "https://www.indeed.com/viewjob?jk=0000000000a1b2c3",
+  "descriptionText": "Lead silicon bring-up, post-silicon validation and customer qualification for a new ASIC. Own NPI from tape-out to volume production across hardware, firmware and test. Manage risk, dependencies and executive stakeholders. Requirements: 8+ years of technical program management in semiconductor or hardware; OEM and ODM customer programs.",
+  "salary": "$185,000 - $240,000",
+  "applicantsCount": 0,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "Indeed",
+  "companyName": "Globex Corporation",
+  "title": "Senior Technical Program Manager",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-24",
+  "link": "https://www.indeed.com/viewjob?jk=0000000000d4e5f6",
+  "descriptionText": "Lead cross-functional technical programs for hardware products: schedules, risks, stakeholders, launch readiness. Requirements: 6+ years of technical program management.",
+  "salary": "$200,000 - $240,000",
+  "applicantsCount": 0,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "Indeed",
+  "companyName": "Initech Holdings",
+  "title": "Staff Technical Program Manager",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-24",
+  "link": "https://www.indeed.com/viewjob?jk=0000000000a7b8c9",
+  "descriptionText": "Lead cross-functional technical programs for hardware products: schedules, risks, stakeholders, launch readiness. Requirements: 6+ years of technical program management.",
+  "salary": "",
+  "applicantsCount": 0,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ },
+ {
+  "_source": "Indeed",
+  "companyName": "Robert Half",
+  "title": "Technical Program Manager (contract)",
+  "location": "Austin, TX",
+  "postedAt": "2026-10-25",
+  "link": "https://www.indeed.com/viewjob?jk=0000000000c1d2e3",
+  "descriptionText": "Lead cross-functional technical programs for hardware products: schedules, risks, stakeholders, launch readiness. Requirements: 6+ years of technical program management.",
+  "salary": "",
+  "applicantsCount": 0,
+  "employmentType": "Full-time",
+  "seniorityLevel": "Mid-Senior level"
+ }
+]

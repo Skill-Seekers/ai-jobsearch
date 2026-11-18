@@ -1,0 +1,17 @@
+# Private material never belongs in this repo
+_private/
+*.denylist
+denylist*.txt
+private_terms*.txt
+!tools/private_terms.example.txt
+.env
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+# A real workspace (resume, tracker, search results) must live outside the repo
+workspace/
+my-workspace/
+dist/

@@ -1,0 +1,1118 @@
+{
+  "_doc": "ONE config file per candidate. Every skill and tool reads it. Edit it (or let setup-workspace write it); do not edit the skills. Keys starting with _ are comments. Run: python -m jobsearch check",
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Alex Rivera",
+    "file_prefix": "ARivera",
+    "sign_off_name": "Alex",
+    "email": "alex.rivera@example.com",
+    "phone": "",
+    "linkedin_url": ""
+  },
+  "paths": {
+    "_doc": "All relative to the workspace root.",
+    "master_resume": "resume/master/ARivera_v1.0.docx",
+    "metrics_worksheet": "resume/metrics-worksheet.md",
+    "job_descriptions": "resume/job_descriptions",
+    "tailored": "resume/tailored",
+    "tracker": "tracking/applied_tracking.json",
+    "search": "search",
+    "interview": "interview",
+    "profile": "profile"
+  },
+  "hard_rules": [
+    "Only list jobs returned by a real source. Never invent a job, company, metric or source.",
+    "Numbers on a resume or letter come only from the metrics worksheet or the master resume, verbatim.",
+    "Never invent a company name; if a posting names none, leave it empty.",
+    "Nothing is written to a file until the candidate says go; a prior resume version is never overwritten."
+  ],
+  "claims_limits": [
+    "Never claim a certification that is not on the master resume (example: PMP).",
+    "Never claim ownership of customers or programs beyond what the metrics worksheet states."
+  ],
+  "targets": {
+    "roles_primary": [
+      "Technical Program Manager",
+      "Senior Technical Program Manager",
+      "Staff Technical Program Manager",
+      "Principal Technical Program Manager"
+    ],
+    "roles_also_consider": [
+      "Engineering Program Manager",
+      "Senior Engineering Program Manager",
+      "Senior NPI Program Manager",
+      "Director, Technical Program Management"
+    ],
+    "roles_exclude": [
+      "Project Coordinator",
+      "Junior PM",
+      "Associate PM",
+      "IT Program Manager",
+      "Scrum Master",
+      "Product Manager"
+    ],
+    "levels_target": [
+      "Senior",
+      "Staff",
+      "Principal",
+      "Director"
+    ],
+    "levels_exclude": [
+      "Junior",
+      "Entry",
+      "Associate",
+      "Intern"
+    ],
+    "functions_in_scope": [
+      "silicon NPI, bring-up and qualification",
+      "customer and OEM-facing program delivery",
+      "generic TPM"
+    ],
+    "locations_preferred": [
+      "Austin, TX metro",
+      "Remote (US)"
+    ],
+    "work_modes": [
+      "Onsite",
+      "Hybrid",
+      "Remote"
+    ],
+    "location_rule": "Non-remote roles outside the preferred metro go to Filtered (no relocation).",
+    "compensation": {
+      "minimum_salary": 170000,
+      "hard_drop_below_max": 130000,
+      "note": "Below the floor is flagged, not hidden. A listed maximum under hard_drop_below_max is dropped."
+    },
+    "out_of_area_action": "filter"
+  },
+  "companies": {
+    "tiers": {
+      "1": [
+        {
+          "name": "Contoso Semiconductor",
+          "aliases": [
+            "Contoso"
+          ]
+        },
+        {
+          "name": "Fabrikam Silicon",
+          "aliases": [
+            "Fabrikam"
+          ]
+        }
+      ],
+      "2": [
+        {
+          "name": "Northwind Networks",
+          "aliases": [
+            "Northwind"
+          ]
+        },
+        {
+          "name": "Tailspin Cloud",
+          "aliases": [
+            "Tailspin"
+          ]
+        },
+        {
+          "name": "Litware Storage",
+          "aliases": [
+            "Litware"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "name": "Adventure Works Devices",
+          "aliases": [
+            "Adventure Works"
+          ]
+        }
+      ]
+    },
+    "dedicated_query_tiers": [
+      1,
+      2
+    ],
+    "avoid": [
+      {
+        "name": "Initech Holdings",
+        "aliases": [
+          "Initech"
+        ],
+        "reason": "Former employer; excluded by choice.",
+        "visibility": "silent"
+      },
+      {
+        "name": "Globex Corporation",
+        "aliases": [
+          "Globex"
+        ],
+        "reason": "Excluded by choice.",
+        "visibility": "filtered"
+      }
+    ],
+    "flag_only": [
+      {
+        "name": "Northwind Networks",
+        "note": "Former employer: shown with a flag, not hidden."
+      }
+    ],
+    "staffing_patterns": [
+      "cybercoders",
+      "pave talent",
+      "logic, inc",
+      "logic inc",
+      "yoh",
+      "apex systems",
+      "ptr global",
+      "eitacies",
+      "inficare",
+      "milestone",
+      "rootshell",
+      "jobgether",
+      "ladders",
+      "talently",
+      "robert half",
+      "insight global",
+      "motion recruitment",
+      "harnham",
+      "phaidon",
+      "jobot",
+      "teksystems",
+      "randstad",
+      "kforce",
+      "aerotek",
+      "actalent",
+      "lorien",
+      "brooksource",
+      "diverse lynx",
+      "piper companies",
+      "oxford global",
+      "judge group",
+      "collabera",
+      "synergis",
+      "rose international",
+      "intersect group",
+      "genesis10",
+      "gyansys",
+      "stonegate",
+      "uniquehire",
+      "projas",
+      "iventim",
+      "denken",
+      "sira",
+      "qcs",
+      "flexton",
+      "kelly services",
+      "bcforward",
+      "livemindz",
+      "global force",
+      "central business solutions",
+      "snapcode",
+      "hexacorp",
+      "mpower",
+      "lumicity",
+      "cienet",
+      "metrostar",
+      "ark infotech",
+      "algo soft",
+      "exatech",
+      "prospance",
+      "dgn",
+      "platform 6"
+    ],
+    "consulting_patterns": [
+      "deloitte",
+      "accenture",
+      "infosys",
+      "wipro",
+      "cognizant",
+      "capgemini",
+      "tata consultancy",
+      "pwc",
+      "ey",
+      "kpmg",
+      "mckinsey"
+    ],
+    "defense_patterns": [
+      "northrop",
+      "lockheed",
+      "bae systems",
+      "booz allen",
+      "raytheon",
+      "rtx",
+      "l3harris",
+      "general dynamics",
+      "anduril",
+      "leidos",
+      "saic",
+      "mitre",
+      "lmi",
+      "spacex",
+      "sierra nevada",
+      "peraton",
+      "parsons",
+      "caci"
+    ],
+    "exclude_defense": true
+  },
+  "title_exclusions": [
+    "product marketing",
+    "field marketing",
+    "marketing manager",
+    "account manager",
+    "sales engineer",
+    "field service",
+    "software engineer",
+    "electrical engineer",
+    "design engineer",
+    "applications engineer",
+    "scrum master",
+    "project coordinator",
+    "recruiter",
+    "failure analysis",
+    "product quality",
+    "communications manager",
+    "software development manager",
+    "engineering manager",
+    "solutions architect",
+    "customer solutions",
+    "data scientist",
+    "financial controller",
+    "procurement",
+    "counsel",
+    "hr",
+    "people success",
+    "revenue operations",
+    "implementation specialist"
+  ],
+  "sources": {
+    "_doc": "The suite connects to nothing itself. You connect Apify and the Indeed connector beforehand (see docs/INSTRUCTIONS.md). A disabled or unavailable source is skipped and noted in the dashboard footer; sample or mock data is never used.",
+    "linkedin": {
+      "enabled": true,
+      "actor": "curious_coder/linkedin-jobs-scraper",
+      "date_posted": "pastWeek",
+      "limit_per_query": 25,
+      "search_url": "https://www.linkedin.com/jobs/search/?location=United+States&geoId=103644278&f_E=4%2C5&f_TPR=r604800",
+      "general_queries": [
+        {
+          "id": "A1",
+          "keywords": "Technical Program Manager",
+          "f_WT": "1,3"
+        },
+        {
+          "id": "A2",
+          "keywords": "Senior Technical Program Manager",
+          "f_WT": "1,2,3"
+        },
+        {
+          "id": "A3",
+          "keywords": "Engineering Program Manager",
+          "f_WT": "1,3"
+        },
+        {
+          "id": "A4",
+          "keywords": "Principal Technical Program Manager",
+          "f_WT": "1,2,3"
+        }
+      ],
+      "company_query": "Technical Program Manager {company}",
+      "company_f_WT": "1,2,3",
+      "company_batch_size": 5
+    },
+    "indeed": {
+      "enabled": true,
+      "connector": "Indeed",
+      "confidence": "low-unless-yield-checked",
+      "searches": [
+        {
+          "keywords": "Senior Technical Program Manager hardware",
+          "location": "Austin, TX"
+        },
+        {
+          "keywords": "Technical Program Manager semiconductor NPI",
+          "location": "Austin, TX"
+        }
+      ]
+    },
+    "glassdoor": {
+      "enabled": true,
+      "actor": "bebity/glassdoor-jobs-scraper",
+      "role": "compensation-band enrichment; expect few usable rows",
+      "queries": [
+        {
+          "keyword": "Senior Technical Program Manager",
+          "location": "Austin, TX",
+          "maxJobs": 20
+        }
+      ]
+    },
+    "dice": {
+      "enabled": false,
+      "actor": "shahidirfan/Dice-Job-Scraper",
+      "note": "Mostly staffing listings in testing."
+    },
+    "google_jobs": {
+      "enabled": false,
+      "note": "Actors returned sample data on free plans in testing; leave off unless you verify real data."
+    }
+  },
+  "staging": {
+    "enabled": false,
+    "batches_per_day": 2,
+    "note": "Optional. Spreads LinkedIn company batches over several days to stay under a usage limit. Progress is kept in search/state/staged_run.json."
+  },
+  "scoring": {
+    "posted_within_days": 7,
+    "new_badge_days": 3,
+    "buckets": {
+      "strongest_min": 80,
+      "strong_min": 65,
+      "stretch_min": 60
+    },
+    "hard_floor": 60,
+    "base_cap": 97,
+    "note": "A transparent keyword heuristic, not a forecast. It saturates near the cap, so review the top of every run by hand.",
+    "tier_points": {
+      "1": 12,
+      "2": 10,
+      "3": 8,
+      "0": 0
+    },
+    "home_locations": [
+      "austin",
+      "round rock",
+      "cedar park",
+      "georgetown",
+      "pflugerville",
+      "san marcos",
+      "texas"
+    ],
+    "domain_families": {
+      "silicon": {
+        "keywords": [
+          "asic",
+          "soc",
+          "silicon",
+          "vlsi",
+          "tapeout",
+          "chip ",
+          "chipset",
+          "semiconductor",
+          "dfx",
+          "post-silicon",
+          "wafer",
+          "foundry",
+          "ip block"
+        ],
+        "points": 12
+      },
+      "npi": {
+        "keywords": [
+          "npi",
+          "new product introduction",
+          "new product transition",
+          "bring-up",
+          "bringup",
+          "qualification",
+          "volume production",
+          "volume manufactur",
+          "design-in",
+          "productization"
+        ],
+        "points": 10
+      },
+      "hw": {
+        "keywords": [
+          "hardware",
+          "board",
+          "firmware",
+          "thermal",
+          "mechanical",
+          "system integration",
+          "platform engineering"
+        ],
+        "points": 7
+      },
+      "dc": {
+        "keywords": [
+          "data center",
+          "datacenter",
+          "server",
+          "rack",
+          "hyperscale",
+          "compute cluster",
+          "infrastructure"
+        ],
+        "points": 7
+      },
+      "customer": {
+        "keywords": [
+          "customer",
+          "oem",
+          "odm",
+          "partner",
+          "tier-1",
+          "design win"
+        ],
+        "points": 6
+      },
+      "netstor": {
+        "keywords": [
+          "networking",
+          "network engineering",
+          "storage",
+          "interconnect",
+          "ethernet",
+          "pcie",
+          "optical"
+        ],
+        "points": 5
+      },
+      "ai": {
+        "keywords": [
+          "ai ",
+          "accelerator",
+          "gpu",
+          "machine learning",
+          "inference",
+          "training cluster"
+        ],
+        "points": 4
+      }
+    },
+    "domain_cap": 22,
+    "negative_families": {
+      "consumer": [
+        "gaming console",
+        "retail",
+        "advertis",
+        " ads",
+        "fashion",
+        "prime video",
+        "alexa",
+        "shopping",
+        "music",
+        "marketplace",
+        "social"
+      ],
+      "nontech": [
+        "health",
+        "pharma",
+        "biotech",
+        "clinical",
+        "energy program",
+        "cost program",
+        "facilities",
+        "construction",
+        "expansion cost"
+      ],
+      "people": [
+        "recruiting",
+        "people operations",
+        "people team",
+        "talent acquisition",
+        "hr technology"
+      ],
+      "auto": [
+        "vehicle",
+        "powertrain",
+        "autonomy",
+        "automotive",
+        "ivi ",
+        "driver"
+      ],
+      "itsec": [
+        "security + it",
+        "corporate it",
+        "it program",
+        "endpoint"
+      ]
+    },
+    "level_bonus": 5,
+    "no_level_penalty": 8,
+    "home_bonus": 12,
+    "remote_bonus": 5,
+    "out_of_area_penalty": 20,
+    "fresh_bonus": 3,
+    "comp_bonus_min": 175000,
+    "comp_low_penalty_below": 150000,
+    "title_match": [
+      {
+        "phrases": [
+          "program manager",
+          "program management",
+          "tpm"
+        ],
+        "points": 8
+      },
+      {
+        "phrases": [
+          "project manager",
+          "project management"
+        ],
+        "points": 3
+      }
+    ],
+    "title_miss_penalty": 12,
+    "level_words": [
+      "senior",
+      "sr",
+      "staff",
+      "principal",
+      "director",
+      "lead"
+    ],
+    "points": {
+      "base": 40,
+      "neg_title": 10,
+      "neg_desc": 6,
+      "neg_cap": 20,
+      "comp_bonus": 5,
+      "comp_penalty": 6
+    },
+    "points_doc": "Point values used by the scorer. Defaults in code match these; change them only with a reason you can explain."
+  },
+  "scope_gate": {
+    "in_phrases": [
+      "bring.?up",
+      "productization",
+      "post.?silicon",
+      "new product introduction",
+      "\\bnpi\\b",
+      "customer qualification",
+      "customer accept",
+      "design.?in",
+      "qualification and validation",
+      "oem",
+      "odm",
+      "tier.?1 (customer|oem)",
+      "customer program",
+      "customer.reported"
+    ],
+    "out_phrases": {
+      "VLSI / DFX / EDA / design-side": [
+        "\\bdfx\\b",
+        "\\bvlsi\\b",
+        "scan/atpg",
+        "\\batpg\\b",
+        "\\bmbist\\b",
+        "dft insertion",
+        "physical design",
+        "rtl handoff",
+        "tapeout flow",
+        "eda (tool|flow|infrastructure)",
+        "pattern (coverage|verification)",
+        "design closure"
+      ],
+      "AI-ML platform / model programs": [
+        "(ml|machine learning) (platform|infrastructure|pipeline)",
+        "model (training|release|serving|deployment)",
+        "\\bllm\\b",
+        "generative ai (model|platform)",
+        "inference (serving|stack)",
+        "quantum comput",
+        "foundation model",
+        "training cluster"
+      ],
+      "Manufacturing / PCB fab / supply": [
+        "pcb (development|manufactur|stack.?up|fabrication)",
+        "stack.?up",
+        "\\bhdi\\b",
+        "impedance",
+        "panel utilization",
+        "contract manufactur",
+        "factory network",
+        "mass production",
+        "production ramp",
+        "\\bdfm\\b",
+        "bill of materials",
+        "\\bbom\\b"
+      ],
+      "Datacenter facilities / cluster deployment / IT ops": [
+        "power, cooling",
+        "cooling, and instrumentation",
+        "fit.?out",
+        "external contractors",
+        "service management",
+        "engineering operations experience",
+        "lab administration",
+        "observability",
+        "uptime",
+        "it infrastructure",
+        "datacenter facilit"
+      ]
+    },
+    "title_out": {
+      "VLSI / DFX / EDA / design-side": "\\bdfx\\b|\\bvlsi\\b|\\beda\\b|silicon ip|, architecture",
+      "AI-ML platform / model programs": "nemotron|genai|generative ai|quantum|\\bml\\b platform|machine learning|ai platform|ai & ml|ai and ml",
+      "Manufacturing / PCB fab / supply": "\\bpcb\\b|manufactur|sourcing|supply chain|product design",
+      "Datacenter facilities / cluster deployment / IT ops": "at.?scale ai cluster|(?<!chip )engineering operations|it infra|facilit"
+    },
+    "rule": "A role is OUT when >=2 distinct out-signals in one domain AND more out-signals than in-signals; OUT roles are capped at Stretch/Watch."
+  },
+  "liveness": {
+    "closed_text_patterns": [
+      "no longer accepting applications",
+      "not accepting applications",
+      "no longer available",
+      "this job is no longer",
+      "position (has been )?filled",
+      "posting (has )?(closed|expired)",
+      "applications? (are |is )?(now )?closed",
+      "requisition (has been )?closed",
+      "job (has )?expired"
+    ],
+    "deadline_patterns": [
+      "(?:apply|application|posting) (?:by|deadline)[: ]+([A-Za-z]{3,9}\\.? \\d{1,2}(?:, ?\\d{4})?)",
+      "posting deadline[: ]+([A-Za-z]{3,9}\\.? \\d{1,2}(?:, ?\\d{4})?)"
+    ],
+    "limits": "Job-site pages often cannot be fetched, so 'open' means the posting appeared in this run's own search results, plus the text checks. The candidate confirms a posting is open before applying."
+  },
+  "outputs": {
+    "dashboard": true,
+    "csv": false,
+    "_doc": "dashboard is always built. csv is optional (off by default): true, or pass --csv. Files go to paths.search."
+  },
+  "do_not_claim": [
+    {
+      "term": "pmp",
+      "aliases": [
+        "project management professional"
+      ],
+      "reason": "Example: not certified. Remove or edit these to match your own decisions."
+    },
+    {
+      "term": "six sigma black belt",
+      "aliases": [
+        "black belt"
+      ],
+      "reason": "Example: no belt on the resume; only Lean practices are claimed."
+    }
+  ],
+  "skill_vocabulary": [
+    {
+      "id": "npi",
+      "label": "New product introduction (NPI)",
+      "category": "Domain",
+      "patterns": [
+        "\\bnpi\\b",
+        "new product introduction",
+        "new product (transition|launch)"
+      ]
+    },
+    {
+      "id": "asic",
+      "label": "ASIC / SoC / silicon programs",
+      "category": "Domain",
+      "patterns": [
+        "\\basic\\b",
+        "\\bsoc\\b",
+        "silicon",
+        "tape-?out"
+      ]
+    },
+    {
+      "id": "bringup",
+      "label": "Bring-up / post-silicon",
+      "category": "Domain",
+      "patterns": [
+        "bring-?up",
+        "post-?silicon",
+        "first silicon"
+      ]
+    },
+    {
+      "id": "qual",
+      "label": "Customer / product qualification",
+      "category": "Domain",
+      "patterns": [
+        "qualification",
+        "design-?in",
+        "design win"
+      ]
+    },
+    {
+      "id": "hw",
+      "label": "Hardware / board / platform",
+      "category": "Domain",
+      "patterns": [
+        "hardware",
+        "\\bboard\\b",
+        "\\bpcb\\b",
+        "system integration"
+      ]
+    },
+    {
+      "id": "fw",
+      "label": "Firmware / BIOS",
+      "category": "Domain",
+      "patterns": [
+        "firmware",
+        "\\bbios\\b",
+        "\\bbmc\\b"
+      ]
+    },
+    {
+      "id": "mem",
+      "label": "Memory / storage / NAND",
+      "category": "Domain",
+      "patterns": [
+        "\\bnand\\b",
+        "\\bdram\\b",
+        "\\bhbm\\b",
+        "memory",
+        "storage",
+        "\\bssd\\b"
+      ]
+    },
+    {
+      "id": "net",
+      "label": "Networking / optical / interconnect",
+      "category": "Domain",
+      "patterns": [
+        "networking",
+        "optical",
+        "ethernet",
+        "interconnect",
+        "\\bpcie\\b"
+      ]
+    },
+    {
+      "id": "dc",
+      "label": "Data center / servers / cloud hardware",
+      "category": "Domain",
+      "patterns": [
+        "data ?center",
+        "\\bserver",
+        "\\brack\\b",
+        "hyperscal"
+      ]
+    },
+    {
+      "id": "ai",
+      "label": "AI / GPU / ML platforms",
+      "category": "Domain",
+      "patterns": [
+        "\\bgpu\\b",
+        "\\bai\\b",
+        "machine learning",
+        "accelerator"
+      ]
+    },
+    {
+      "id": "sec",
+      "label": "Security / FIPS / compliance",
+      "category": "Domain",
+      "patterns": [
+        "\\bfips\\b",
+        "compliance",
+        "\\bsoc ?2\\b",
+        "fedramp",
+        "security"
+      ]
+    },
+    {
+      "id": "mfg",
+      "label": "Manufacturing / factory ramp / mass production",
+      "category": "Operations",
+      "patterns": [
+        "mass production",
+        "manufactur",
+        "factory",
+        "production ramp",
+        "volume production"
+      ]
+    },
+    {
+      "id": "supply",
+      "label": "Supply chain / procurement / vendors",
+      "category": "Operations",
+      "patterns": [
+        "supply chain",
+        "procurement",
+        "vendor",
+        "sourcing",
+        "\\bodm\\b|\\bcm\\b|contract manufactur"
+      ]
+    },
+    {
+      "id": "test",
+      "label": "Test / diagnostics / yield",
+      "category": "Operations",
+      "patterns": [
+        "diagnostic",
+        "\\byield\\b",
+        "test (plan|engineering|coverage)",
+        "validation"
+      ]
+    },
+    {
+      "id": "oem",
+      "label": "OEM / ODM customer programs",
+      "category": "Customer",
+      "patterns": [
+        "\\boem\\b",
+        "\\bodm\\b"
+      ]
+    },
+    {
+      "id": "csp",
+      "label": "Hyperscaler / CSP customers",
+      "category": "Customer",
+      "patterns": [
+        "hyperscal",
+        "\\bcsp\\b",
+        "cloud service provider"
+      ]
+    },
+    {
+      "id": "custfacing",
+      "label": "Customer-facing program leadership",
+      "category": "Customer",
+      "patterns": [
+        "customer[- ]facing",
+        "customer program",
+        "customer engagement",
+        "customer success"
+      ]
+    },
+    {
+      "id": "pmp",
+      "label": "PMP certification",
+      "category": "Certification",
+      "patterns": [
+        "\\bpmp\\b",
+        "project management professional"
+      ],
+      "claim_term": "pmp"
+    },
+    {
+      "id": "scrumcert",
+      "label": "Scrum / SAFe certification",
+      "category": "Certification",
+      "patterns": [
+        "certified scrum",
+        "\\bcsm\\b",
+        "\\bsafe\\b agilist",
+        "\\bpspo?\\b"
+      ]
+    },
+    {
+      "id": "sixsigma",
+      "label": "Six Sigma / Lean",
+      "category": "Certification",
+      "patterns": [
+        "six sigma",
+        "\\blean\\b"
+      ],
+      "claim_term": "six sigma black belt"
+    },
+    {
+      "id": "agile",
+      "label": "Agile / Scrum / Kanban",
+      "category": "Method",
+      "patterns": [
+        "\\bagile\\b",
+        "\\bscrum\\b",
+        "kanban"
+      ]
+    },
+    {
+      "id": "sdlc",
+      "label": "SDLC / software delivery",
+      "category": "Method",
+      "patterns": [
+        "\\bsdlc\\b",
+        "software development life",
+        "ci/cd",
+        "devops"
+      ]
+    },
+    {
+      "id": "risk",
+      "label": "Risk management / escalation",
+      "category": "Method",
+      "patterns": [
+        "risk (management|mitigation|register)",
+        "escalat"
+      ]
+    },
+    {
+      "id": "gov",
+      "label": "Governance / cadence / executive reporting",
+      "category": "Method",
+      "patterns": [
+        "governance",
+        "executive (reporting|updates|reviews)",
+        "steering"
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Budget / financial management",
+      "category": "Method",
+      "patterns": [
+        "budget",
+        "\\bp&l\\b",
+        "financial"
+      ]
+    },
+    {
+      "id": "swdev",
+      "label": "Software development experience",
+      "category": "Skill",
+      "patterns": [
+        "software development",
+        "software engineering",
+        "writing code",
+        "programming"
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python / scripting",
+      "category": "Skill",
+      "patterns": [
+        "\\bpython\\b",
+        "scripting"
+      ]
+    },
+    {
+      "id": "sql",
+      "label": "SQL / data analysis / dashboards",
+      "category": "Skill",
+      "patterns": [
+        "\\bsql\\b",
+        "tableau",
+        "power ?bi",
+        "data analy"
+      ]
+    },
+    {
+      "id": "cloudplat",
+      "label": "AWS / Azure / GCP platforms",
+      "category": "Skill",
+      "patterns": [
+        "\\baws\\b",
+        "\\bazure\\b",
+        "\\bgcp\\b"
+      ]
+    },
+    {
+      "id": "jira",
+      "label": "Jira / Confluence",
+      "category": "Tool",
+      "patterns": [
+        "\\bjira\\b",
+        "confluence"
+      ]
+    },
+    {
+      "id": "msproject",
+      "label": "MS Project / Smartsheet / Excel",
+      "category": "Tool",
+      "patterns": [
+        "ms project",
+        "microsoft project",
+        "smartsheet",
+        "\\bexcel\\b"
+      ]
+    },
+    {
+      "id": "mgmt",
+      "label": "People management / direct reports",
+      "category": "Leadership",
+      "patterns": [
+        "direct reports",
+        "people manage",
+        "manag(e|ing) (a )?team of",
+        "line management"
+      ]
+    },
+    {
+      "id": "mentor",
+      "label": "Mentoring / coaching",
+      "category": "Leadership",
+      "patterns": [
+        "mentor",
+        "coach"
+      ]
+    },
+    {
+      "id": "exec",
+      "label": "Executive stakeholder influence",
+      "category": "Leadership",
+      "patterns": [
+        "executive",
+        "c-?level",
+        "senior leadership",
+        "\\bvp\\b"
+      ]
+    },
+    {
+      "id": "mba",
+      "label": "MBA / master's degree",
+      "category": "Education",
+      "patterns": [
+        "\\bmba\\b",
+        "master'?s"
+      ]
+    },
+    {
+      "id": "bs",
+      "label": "Bachelor's degree",
+      "category": "Education",
+      "patterns": [
+        "bachelor'?s",
+        "\\bb\\.?s\\.?\\b"
+      ]
+    },
+    {
+      "id": "clear",
+      "label": "Security clearance / US citizenship",
+      "category": "Eligibility",
+      "patterns": [
+        "security clearance",
+        "\\bts/?sci\\b",
+        "u\\.?s\\.? citizen"
+      ]
+    }
+  ],
+  "skill_vocabulary_doc": "Replace this list for another role (e.g. data science: python, sql, spark, experiment design, causal inference, MLOps). claim_term links a skill to a do_not_claim term.",
+  "ats_generic_terms": [
+    "stakeholder",
+    "cross-?functional",
+    "roadmap",
+    "schedule",
+    "budget",
+    "customer",
+    "agile",
+    "scrum",
+    "\\bjira\\b",
+    "risk management",
+    "program management",
+    "project management",
+    "escalation",
+    "dependenc\\w+",
+    "milestone\\w*",
+    "launch",
+    "governance",
+    "compliance",
+    "vendor",
+    "quality",
+    "platform",
+    "\\bpython\\b",
+    "\\bsql\\b",
+    "excel",
+    "confluence"
+  ],
+  "tracker_generic_words": [
+    "program manager",
+    "technical program manager",
+    "project manager",
+    "tpm",
+    "pm"
+  ]
+}
